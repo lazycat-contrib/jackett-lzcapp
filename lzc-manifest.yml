@@ -1,0 +1,31 @@
+application:
+  subdomain: jackett
+  multi_instance: false
+  upstreams:
+    - location: /
+      backend: http://jackett:9117/
+  public_path:
+    - /api/
+  injects:
+    - id: open-save-chooser
+      on: browser
+      when:
+        - /*
+      do:
+        - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
+
+services:
+  jackett:
+    # upstream: docker.io/linuxserver/jackett:0.24.2527
+    image: docker.1ms.run/linuxserver/jackett:0.24.2527
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - "TZ={{ .U.timezone }}"
+      - AUTO_UPDATE=false
+    binds:
+      - /lzcapp/var/jackett/config:/config
+      - /lzcapp/var/jackett/downloads:/downloads
+
+usage: |
+  Open Jackett and configure tracker indexers from the authenticated UI. Set an Admin password in Jackett if the UI will ever be exposed outside LazyCat. The /api/ path is public for Torznab clients and remains protected by Jackett's generated API key. Blackhole torrent files persist under the application data directory.

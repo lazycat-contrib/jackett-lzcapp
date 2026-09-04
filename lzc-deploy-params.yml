@@ -1,0 +1,17 @@
+params:
+  - id: timezone
+    type: string
+    name: Time Zone
+    description: IANA time zone such as Etc/UTC, Asia/Shanghai, Europe/London, or America/New_York
+    default_value: Etc/UTC
+    optional: false
+
+locales:
+  zh:
+    timezone:
+      name: 时区
+      description: IANA 时区，例如 Etc/UTC、Asia/Shanghai、Europe/London 或 America/New_York
+  en:
+    timezone:
+      name: Time Zone
+      description: IANA time zone such as Etc/UTC, Asia/Shanghai, Europe/London, or America/New_York

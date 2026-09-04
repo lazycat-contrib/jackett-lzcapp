@@ -1,0 +1,18 @@
+package: community.lazycat.app.jackett
+version: 0.24.2527
+name: Jackett
+description: API Support for your favorite torrent trackers
+min_os_version: 1.5.0
+homepage: https://github.com/Jackett/Jackett
+author: Jackett
+license: GPL-2.0-only
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: Jackett
+    description: 为常用 Torrent Tracker 提供统一 API 支持
+  en:
+    name: Jackett
+    description: API Support for your favorite torrent trackers
