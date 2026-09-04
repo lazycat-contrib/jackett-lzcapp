@@ -4,8 +4,6 @@ application:
   upstreams:
     - location: /
       backend: http://jackett:9117/
-  public_path:
-    - /api/
   injects:
     - id: open-save-chooser
       on: browser
@@ -28,4 +26,4 @@ services:
       - /lzcapp/var/jackett/downloads:/downloads
 
 usage: |
-  Open Jackett and configure tracker indexers from the authenticated UI. Set an Admin password in Jackett if the UI will ever be exposed outside LazyCat. The /api/ path is public for Torznab clients and remains protected by Jackett's generated API key. Blackhole torrent files persist under the application data directory.
+  Open Jackett and configure tracker indexers from the LazyCat-authenticated UI. The UI and API remain behind LazyCat authentication because Jackett mixes Torznab and management endpoints under the same /api/ prefix. Blackhole torrent files persist under the application data directory.

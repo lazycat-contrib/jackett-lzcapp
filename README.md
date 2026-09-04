@@ -5,7 +5,7 @@ LazyCat LPK v2 packaging for [Jackett](https://github.com/Jackett/Jackett), whic
 ## Runtime
 
 - Runs the requested `linuxserver/jackett:0.24.2527` image through the `docker.1ms.run` mirror.
-- The WebUI remains protected by LazyCat authentication; only `/api/` is public for Torznab/API-key clients.
+- The WebUI and API remain protected by LazyCat authentication. Jackett mixes Torznab and management endpoints under the same `/api/` prefix, so the package does not bypass authentication for that subtree.
 - In-container updates are disabled. GitHub Actions tracks stable image tags instead.
 - Configuration and blackhole downloads persist under `/lzcapp/var/jackett`.
 - Browser torrent-file downloads use the LazyCat file-picker injection.
