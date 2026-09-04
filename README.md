@@ -24,6 +24,8 @@ lzc-cli project release -o dist/application.lpk
 
 The scheduled workflow follows stable SemVer tags for `linuxserver/jackett`, creates a versioned GitHub Release asset, and publishes only to the MiaoMiao private store.
 
+The upstream Registry currently exposes 36,640 tags, so this repository raises only its own discovery limits to 50,000.
+
 Required repository or organization Secrets:
 
 - `APPSTORE_URL`

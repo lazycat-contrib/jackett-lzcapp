@@ -26,6 +26,8 @@ images:
     channel: stable
     sort: semver
     tag_regex: '^v?\d+\.\d+\.\d+$'
+    max_tags: 50000
+    max_matching_tags: 50000
     delivery:
       mode: mirror
       require_digest_match: true
