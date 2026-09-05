@@ -11,11 +11,10 @@ application:
         - /*
       do:
         - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
-
 services:
   jackett:
-    # upstream: docker.io/linuxserver/jackett:0.24.2527
-    image: docker.1ms.run/linuxserver/jackett:0.24.2527
+    # upstream: docker.io/linuxserver/jackett:0.24.2538
+    image: docker.1ms.run/linuxserver/jackett:0.24.2538
     environment:
       - PUID=1000
       - PGID=1000
@@ -24,6 +23,5 @@ services:
     binds:
       - /lzcapp/var/jackett/config:/config
       - /lzcapp/var/jackett/downloads:/downloads
-
 usage: |
   Open Jackett and configure tracker indexers from the LazyCat-authenticated UI. The UI and API remain behind LazyCat authentication because Jackett mixes Torznab and management endpoints under the same /api/ prefix. Blackhole torrent files persist under the application data directory.
