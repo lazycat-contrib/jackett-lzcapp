@@ -13,8 +13,8 @@ application:
         - src: file:///lzcapp/pkg/content/lazycat-injects/lzc-file-chooser-inject.js
 services:
   jackett:
-    # upstream: docker.io/linuxserver/jackett:0.24.2538
-    image: docker.1ms.run/linuxserver/jackett:0.24.2538
+    # upstream: docker.io/linuxserver/jackett:0.24.2541
+    image: docker.1ms.run/linuxserver/jackett:0.24.2541
     environment:
       - PUID=1000
       - PGID=1000
